@@ -3,3 +3,4 @@
         <add id="Veriteworks_ParetoAnalytics::manager" title="Pareto Analytics" module="Veriteworks_ParetoAnalytics" sortOrder="10" resource="Veriteworks_ParetoAnalytics::manager"/>
         <add id="Veriteworks_ParetoAnalytics::add_row" title="Pareto Analytics main" module="Veriteworks_ParetoAnalytics" sortOrder="10" parent="Veriteworks_ParetoAnalytics::manager" action="paretoanalytics/grid/index" resource="Veriteworks_ParetoAnalytics::add_row"/>
     </menu>
+</config>

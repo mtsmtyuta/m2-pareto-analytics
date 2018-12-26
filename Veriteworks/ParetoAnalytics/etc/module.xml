@@ -3,3 +3,4 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Veriteworks_ParetoAnalytics" setup_version="0.0.1">
     </module>
+</config>
