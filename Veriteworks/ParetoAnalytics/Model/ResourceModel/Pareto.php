@@ -11,7 +11,7 @@ class Pareto extends AbstractDb
     /**
      * @var string
      */
-    protected $_idFieldName = 'entity_id';
+    protected $_idFieldName = 'customer_id';
 
     /**
      * Construct.
@@ -32,6 +32,6 @@ class Pareto extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('sales_order_grid', 'entity_id');
+        $this->_init('sales_order_grid', 'customer_id');
     }
 }
