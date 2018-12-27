@@ -2,35 +2,31 @@
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">paretoanalytics_grid_list.paretoanalytics_grid_listing_data_source
-            </item>
-            <item name="deps" xsi:type="string">paretoanalytics_grid_list.paretoanalytics_grid_listing_data_source
-            </item>
+            <item name="provider" xsi:type="string">paretoanalytics_grid_list.paretoanalytics_grid_listing_data_source</item>
+            <item name="deps" xsi:type="string">paretoanalytics_grid_list.paretoanalytics_grid_listing_data_source</item>
         </item>
         <item name="spinner" xsi:type="string">paretoanalytics_grid_columns</item>
         <item name="buttons" xsi:type="array">
             <item name="refresh" xsi:type="array">
-                <item name="name" xsi:type="string">refresh</item>
-                <item name="label" xsi:type="string" translate="true">Refresh</item>
+                <item name="name" xsi:type="string">reload</item>
+                <item name="label" xsi:type="string" translate="true">Reload</item>
                 <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">*/*/refresh</item>
+                <item name="url" xsi:type="string">*/*/reload</item>
             </item>
         </item>
     </argument>
     <dataSource name="paretoanalytics_grid_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">
-                Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider
-            </argument>
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
             <argument name="name" xsi:type="string">paretoanalytics_grid_listing_data_source</argument>
-            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
-            <argument name="requestFieldName" xsi:type="string">entity_id</argument>
+            <argument name="primaryFieldName" xsi:type="string">customer_id</argument>
+            <argument name="requestFieldName" xsi:type="string">customer_id</argument>
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="update_url" xsi:type="url" path="mui/index/render"/>
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
                     <item name="storageConfig" xsi:type="array">
-                        <item name="indexField" xsi:type="string">entity_id</item>
+                        <item name="indexField" xsi:type="string">customer_id</item>
                     </item>
                 </item>
             </argument>
@@ -45,7 +41,6 @@
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
                 <item name="template" xsi:type="string">ui/grid/toolbar</item>
-                <item name="stickyTmpl" xsi:type="string">ui/grid/sticky/toolbar</item>
             </item>
         </argument>
         <bookmark name="bookmarks"/>
@@ -58,7 +53,7 @@
                         </item>
                     </item>
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/controls/columns</item>
-                    <item name="displayArea" xsi:type="string">dataManageActions</item>
+                    <item name="displayArea" xsi:type="string">dataGridActions</item>
                 </item>
             </argument>
         </component>
@@ -115,30 +110,12 @@
         </paging>
     </container>
     <columns name="paretoanalytics_grid_columns">
-        <selectionsColumn name="ids">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="indexField" xsi:type="string">entity_id</item>
-                    <item name="sortOrder" xsi:type="number">0</item>
-                    <item name="sorting" xsi:type="string">asc</item>
-                </item>
-            </argument>
-        </selectionsColumn>
-        <column name="customer_id">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Customer Id</item>
-                    <item name="sortOrder" xsi:type="number">1</item>
-                </item>
-            </argument>
-        </column>
         <column name="customer_name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Customer Name</item>
-                    <item name="sortOrder" xsi:type="number">2</item>
+                    <item name="sortOrder" xsi:type="number">1</item>
                 </item>
             </argument>
         </column>
@@ -147,7 +124,7 @@
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Grand Total</item>
-                    <item name="sortOrder" xsi:type="number">3</item>
+                    <item name="sortOrder" xsi:type="number">2</item>
                 </item>
             </argument>
         </column>
