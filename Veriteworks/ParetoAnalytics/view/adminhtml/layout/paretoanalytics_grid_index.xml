@@ -3,7 +3,15 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <uiComponent name="paretoanalytics_grid_list"/>
+            <container >
+                <block class="Magento\Framework\View\Element\Template" name="pareto.tab" before="-" template="Veriteworks_ParetoAnalytics::tab.phtml" />
+                <container name="winter-list" htmlTag="div" htmlClass="winter-list" >
+                    <uiComponent name="paretoanalytics_grid_list"/>
+                </container>
+                <container name="winter-list-sec" htmlTag="div" htmlClass="winter-list-sec" >
+                    <uiComponent name="paretoanalytics_grid_sec_list"/>
+                </container>
+            </container>
         </referenceContainer>
     </body>
 </page>

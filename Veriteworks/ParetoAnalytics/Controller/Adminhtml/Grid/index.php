@@ -3,6 +3,10 @@
 namespace Veriteworks\ParetoAnalytics\Controller\Adminhtml\Grid;
 
 
+/**
+ * Class Index
+ * @package Veriteworks\ParetoAnalytics\Controller\Adminhtml\Grid
+ */
 class Index extends \Magento\Backend\App\Action
 {
 

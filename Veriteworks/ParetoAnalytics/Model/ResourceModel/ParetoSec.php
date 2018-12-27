@@ -6,7 +6,7 @@ use \Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 /**
  * Calendar mysql resource.
  */
-class Pareto extends AbstractDb
+class ParetoSec extends AbstractDb
 {
     /**
      * @var string
@@ -32,6 +32,6 @@ class Pareto extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('sales_order_grid', 'entity_id');
+        $this->_init('winter_2018', 'entity_id');
     }
 }

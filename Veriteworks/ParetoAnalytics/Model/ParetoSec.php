@@ -9,13 +9,13 @@ use \Magento\Framework\Model\AbstractModel;
  * Class Pareto
  * @package Veriteworks\ParetoAnalytics\Model
  */
-class Pareto extends AbstractModel implements GridInterface
+class ParetoSec extends AbstractModel implements GridInterface
 {
     /**
      *
      */
     protected function _construct()
     {
-        $this->_init('Veriteworks\ParetoAnalytics\Model\ResourceModel\Pareto');
+        $this->_init('Veriteworks\ParetoAnalytics\Model\ResourceModel\ParetoSec');
     }
 }
