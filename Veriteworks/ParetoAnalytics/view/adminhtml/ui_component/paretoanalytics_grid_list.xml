@@ -1,0 +1,145 @@
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">paretoanalytics_grid_list.paretoanalytics_grid_listing_data_source
+            </item>
+            <item name="deps" xsi:type="string">paretoanalytics_grid_list.paretoanalytics_grid_listing_data_source
+            </item>
+        </item>
+        <item name="spinner" xsi:type="string">paretoanalytics_grid_columns</item>
+    </argument>
+    <dataSource name="vwcalendar_manage_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">
+                Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider
+            </argument>
+            <argument name="name" xsi:type="string">paretoanalytics_grid_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">entity_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">entity_id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <exportButton name="export_button"/>
+        <filterSearch name="fulltext"/>
+        <filters name="listing_filters">
+            <filterSelect name="store_id" provider="${ $.parentName }">
+                <settings>
+                    <options class="Magento\Store\Ui\Component\Listing\Column\Store\Options"/>
+                    <caption translate="true">All Store Views</caption>
+                    <label translate="true">Purchase Point</label>
+                    <dataScope>store_id</dataScope>
+                    <imports>
+                        <link name="visible">ns = ${ $.ns }, componentType = column, index = ${ $.index }:visible</link>
+                    </imports>
+                </settings>
+            </filterSelect>
+        </filters>
+        <massaction name="listing_massaction" component="Magento_Ui/js/grid/tree-massactions">
+            <action name="cancel">
+                <settings>
+                    <url path="sales/order/massCancel"/>
+                    <type>cancel</type>
+                    <label translate="true">Cancel</label>
+                </settings>
+            </action>
+            <action name="hold_order">
+                <settings>
+                    <url path="sales/order/massHold"/>
+                    <type>hold_order</type>
+                    <label translate="true">Hold</label>
+                </settings>
+            </action>
+            <action name="unhold_order">
+                <settings>
+                    <url path="sales/order/massUnhold"/>
+                    <type>unhold_order</type>
+                    <label translate="true">Unhold</label>
+                </settings>
+            </action>
+            <action name="pdfinvoices_order">
+                <settings>
+                    <url path="sales/order/pdfinvoices"/>
+                    <type>pdfinvoices_order</type>
+                    <label translate="true">Print Invoices</label>
+                </settings>
+            </action>
+            <action name="pdfshipments_order">
+                <settings>
+                    <url path="sales/order/pdfshipments"/>
+                    <type>pdfshipments_order</type>
+                    <label translate="true">Print Packing Slips</label>
+                </settings>
+            </action>
+            <action name="pdfcreditmemos_order">
+                <settings>
+                    <url path="sales/order/pdfcreditmemos"/>
+                    <type>pdfcreditmemos_order</type>
+                    <label translate="true">Print Credit Memos</label>
+                </settings>
+            </action>
+            <action name="pdfdocs_order">
+                <settings>
+                    <url path="sales/order/pdfdocs"/>
+                    <type>pdfdocs_order</type>
+                    <label translate="true">Print All</label>
+                </settings>
+            </action>
+            <action name="print_shipping_label">
+                <settings>
+                    <url path="adminhtml/order_shipment/massPrintShippingLabel"/>
+                    <type>print_shipping_label</type>
+                    <label translate="true">Print Shipping Labels</label>
+                </settings>
+            </action>
+        </massaction>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="sales_order_columns">
+        <settings>
+            <childDefaults>
+                <param name="fieldAction" xsi:type="array">
+                    <item name="provider" xsi:type="string">
+                        paretoanalytics_grid_listing.paretoanalytics_grid_listing.paretoanalytics_grid_columns.actions
+                    </item>
+                    <item name="target" xsi:type="string">applyAction</item>
+                    <item name="params" xsi:type="array">
+                        <item name="0" xsi:type="string">view</item>
+                        <item name="1" xsi:type="string">${ $.$data.rowIndex }</item>
+                    </item>
+                </param>
+            </childDefaults>
+        </settings>
+        <column name="customer_id">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Customer Name</label>
+            </settings>
+        </column>
+        <column name="grand_total">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Grand Total (Purchased)</label>
+            </settings>
+        </column>
+    </columns>
+</listing>
