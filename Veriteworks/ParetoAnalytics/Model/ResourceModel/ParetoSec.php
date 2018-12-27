@@ -11,7 +11,7 @@ class ParetoSec extends AbstractDb
     /**
      * @var string
      */
-    protected $_idFieldName = 'entity_id';
+    protected $_idFieldName = 'customer_id';
 
     /**
      * Construct.
@@ -32,6 +32,6 @@ class ParetoSec extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('winter_2018', 'entity_id');
+        $this->_init('winter_2018', 'customer_id');
     }
 }
