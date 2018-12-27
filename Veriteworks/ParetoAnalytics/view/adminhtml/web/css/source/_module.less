@@ -1,4 +1,6 @@
-
+input[name="pareto-tab__item"]{
+  display: none;
+}
 .winter-list {
   display: none;
 }
@@ -6,4 +8,21 @@
 #pareto-tab-1:checked ~ .winter-list--1m,
 #pareto-tab-3:checked ~ .winter-list--3m {
   display: block;
+}
+
+.pareto-tab__item{
+  padding: 15px;
+  width: 100px;
+  background-color: #eb5202;
+  border-color: #eb5202;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+  margin: 20px;
+  &:hover{
+    background: #923b0e;
+  }
+}
+input[name="pareto-tab__item"]:checked + .pareto-tab__item {
+  background-color: #923b0e;;
 }
