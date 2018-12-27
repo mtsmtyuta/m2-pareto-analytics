@@ -11,13 +11,12 @@ class Pareto extends AbstractDb
     /**
      * @var string
      */
-    protected $_idFieldName = 'customer_id';
+    protected $_idFieldName = 'entity_id';
 
     /**
      * Construct.
      *
      * @param \Magento\Framework\Model\ResourceModel\Db\Context $context
-     * @param \Magento\Framework\Stdlib\DateTime\DateTime       $date
      * @param string|null                                       $resourcePrefix
      */
     public function __construct(
@@ -33,6 +32,6 @@ class Pareto extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('winter_2018', 'customer_id');
+        $this->_init('winter_2018', 'entity_id');
     }
 }
