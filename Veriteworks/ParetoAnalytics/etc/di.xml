@@ -10,7 +10,7 @@
     </type>
     <virtualType name="ParetoCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
-            <argument name="mainTable" xsi:type="string">winter_2018</argument>
+            <argument name="mainTable" xsi:type="string">sales_order_grid</argument>
             <argument name="resourceModel" xsi:type="string">Veriteworks\ParetoAnalytics\Model\ResourceModel\Pareto</argument>
         </arguments>
     </virtualType>

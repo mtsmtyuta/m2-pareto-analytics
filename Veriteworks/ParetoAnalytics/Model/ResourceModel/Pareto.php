@@ -32,6 +32,6 @@ class Pareto extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('winter_2018', 'entity_id');
+        $this->_init('sales_order_grid', 'entity_id');
     }
 }
