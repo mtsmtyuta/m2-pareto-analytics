@@ -2,27 +2,19 @@
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">paretoanalytics_grid_list.paretoanalytics_grid_listing_data_source
+            <item name="provider" xsi:type="string">paretoanalytics_grid_sec_list.paretoanalytics_grid_sec_listing_data_source
             </item>
-            <item name="deps" xsi:type="string">paretoanalytics_grid_list.paretoanalytics_grid_listing_data_source
-            </item>
-        </item>
-        <item name="spinner" xsi:type="string">paretoanalytics_grid_columns</item>
-        <item name="buttons" xsi:type="array">
-            <item name="refresh" xsi:type="array">
-                <item name="name" xsi:type="string">refresh</item>
-                <item name="label" xsi:type="string" translate="true">Refresh</item>
-                <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">*/*/refresh</item>
+            <item name="deps" xsi:type="string">paretoanalytics_grid_sec_list.paretoanalytics_grid_sec_listing_data_source
             </item>
         </item>
+        <item name="spinner" xsi:type="string">paretoanalytics_grid_sec_columns</item>
     </argument>
     <dataSource name="paretoanalytics_grid_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">
                 Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider
             </argument>
-            <argument name="name" xsi:type="string">paretoanalytics_grid_listing_data_source</argument>
+            <argument name="name" xsi:type="string">paretoanalytics_grid_sec_listing_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
             <argument name="requestFieldName" xsi:type="string">entity_id</argument>
             <argument name="data" xsi:type="array">
@@ -54,7 +46,7 @@
                 <item name="config" xsi:type="array">
                     <item name="columnsData" xsi:type="array">
                         <item name="provider" xsi:type="string">
-                            paretoanalytics_grid_list.paretoanalytics_grid_list.paretoanalytics_grid_columns
+                            paretoanalytics_grid_list.paretoanalytics_grid_sec_list.paretoanalytics_grid_sec_columns
                         </item>
                     </item>
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/controls/columns</item>
@@ -66,11 +58,11 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="columnsProvider" xsi:type="string">
-                        paretoanalytics_grid_list.paretoanalytics_grid_list.paretoanalytics_grid_columns
+                        paretoanalytics_grid_sec_list.paretoanalytics_grid_sec_list.paretoanalytics_grid_sec_columns
                     </item>
                     <item name="storageConfig" xsi:type="array">
                         <item name="provider" xsi:type="string">
-                            paretoanalytics_grid_list.paretoanalytics_grid_list.listing_top.bookmarks
+                            paretoanalytics_grid_sec_list.paretoanalytics_grid_sec_list.listing_top.bookmarks
                         </item>
                         <item name="namespace" xsi:type="string">current.filters</item>
                     </item>
@@ -84,11 +76,11 @@
                     </item>
                     <item name="childDefaults" xsi:type="array">
                         <item name="provider" xsi:type="string">
-                            paretoanalytics_grid_list.paretoanalytics_grid_list.listing_top.listing_filters
+                            paretoanalytics_grid_sec_list.paretoanalytics_grid_sec_list.listing_top.listing_filters
                         </item>
                         <item name="imports" xsi:type="array">
                             <item name="visible" xsi:type="string">
-                                paretoanalytics_grid_list.paretoanalytics_grid_list.paretoanalytics_grid_columns.${ $.index }:visible
+                                paretoanalytics_grid_sec_list.paretoanalytics_grid_sec_list.paretoanalytics_grid_sec_columns.${ $.index }:visible
                             </item>
                         </item>
                     </item>
@@ -103,18 +95,18 @@
                 <item name="config" xsi:type="array">
                     <item name="storageConfig" xsi:type="array">
                         <item name="provider" xsi:type="string">
-                            paretoanalytics_grid_list.paretoanalytics_grid_list.listing_top.bookmarks
+                            paretoanalytics_grid_sec_list.paretoanalytics_grid_sec_list.listing_top.bookmarks
                         </item>
                         <item name="namespace" xsi:type="string">current.paging</item>
                     </item>
                     <item name="selectProvider" xsi:type="string">
-                        paretoanalytics_grid_list.paretoanalytics_grid_list.paretoanalytics_grid_columns.ids
+                        paretoanalytics_grid_sec_list.paretoanalytics_grid_sec_list.paretoanalytics_grid_sec_columns.ids
                     </item>
                 </item>
             </argument>
         </paging>
     </container>
-    <columns name="paretoanalytics_grid_columns">
+    <columns name="paretoanalytics_grid_sec_columns">
         <selectionsColumn name="ids">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
