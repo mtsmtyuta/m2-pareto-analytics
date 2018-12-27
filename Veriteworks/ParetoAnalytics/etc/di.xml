@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="paretoanalytics_grid_listing_data_source" xsi:type="string">ParetoCollection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="ParetoCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">winter_2018</argument>
+            <argument name="resourceModel" xsi:type="string">Veriteworks\ParetoAnalytics\Model\ResourceModel\Pareto</argument>
+        </arguments>
+    </virtualType>
+</config>
