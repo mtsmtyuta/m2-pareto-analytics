@@ -14,8 +14,8 @@ class Collection extends AbstractCollection
     protected function _construct()
     {
         $this->_init(
-            'Veriteworks\ParetoAnalytics\Model\Pareto',
-            'Veriteworks\ParetoAnalytics\Model\ResourceModel\Pareto'
+            'Veriteworks\ParetoAnalytics\Model\ParetoSec',
+            'Veriteworks\ParetoAnalytics\Model\ResourceModel\ParetoSec'
         );
     }
 

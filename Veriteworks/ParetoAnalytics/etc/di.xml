@@ -14,4 +14,17 @@
             <argument name="resourceModel" xsi:type="string">Veriteworks\ParetoAnalytics\Model\ResourceModel\Pareto</argument>
         </arguments>
     </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="paretoanalytics_grid_sec_listing_data_source" xsi:type="string">ParetoSecCollection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="ParetoSecCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">winter_2018</argument>
+            <argument name="resourceModel" xsi:type="string">Veriteworks\ParetoAnalytics\Model\ResourceModel\ParetoSec</argument>
+        </arguments>
+    </virtualType>
 </config>
